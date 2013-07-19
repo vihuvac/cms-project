@@ -21,7 +21,7 @@ The website comes pre-configured with the following bundles::
 Installation
 ------------
 
-Install composer:
+Install composer::
 
     curl -s https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin
 
@@ -35,10 +35,12 @@ Fix any errors that you may encounter there. When that's finished, run::
 
 That will install all the external libraries.
 
-Configure the parameters.yml file before going creating the configs for other envs and going ahead with the database::
+Configure the ``parameters.yml`` file before going creating the configs for other envs and going ahead with the database.
 
     cp app/config/parameters.yml.sample app/config/parameters.yml
     edit the app/config/parameters.yml file
+
+Then run::
     cp app/config/parameters.yml app/config/production_parameters.yml
     cp app/config/parameters.yml app/config/validation_parameters.yml
 
@@ -76,10 +78,10 @@ By default the Sonata Page bundle is activated, so you need to starts 2 commands
     php app/console sonata:page:update-core-routes --site=all
     php app/console sonata:page:create-snapshots --site=all
 
-Note::
+Note:
 
-    The ``update-core-routes`` populates the database with ``page`` from the routing information.
-    The ``create-snapshots`` create a snapshot (a public page version) from the created pages.
+The ``update-core-routes`` populates the database with ``page`` from the routing information.
+The ``create-snapshots`` create a snapshot (a public page version) from the created pages.
 
 
 Unit Testing

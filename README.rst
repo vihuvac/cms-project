@@ -4,7 +4,7 @@ Víctor Hugo Valle Website
 What's inside?
 --------------
 
-The website comes pre-configured with the following bundles::
+The website comes pre-configured with the following bundles:
 
 * Bundles from Symfony Standard distribution
 * SonataAdminBundle - The missing Symfony2 Admin Generator
@@ -36,11 +36,12 @@ Fix any errors that you may encounter there. When that's finished, run::
 That will install all the external libraries.
 
 Configure the ``parameters.yml`` file before going creating the configs for other envs and going ahead with the database.
-
+::
     cp app/config/parameters.yml.sample app/config/parameters.yml
     edit the app/config/parameters.yml file
 
-Then run::
+Once configured the ``parameters.yml`` file just run::
+
     cp app/config/parameters.yml app/config/production_parameters.yml
     cp app/config/parameters.yml app/config/validation_parameters.yml
 

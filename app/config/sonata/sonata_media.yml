@@ -1,0 +1,57 @@
+sonata_media:
+    db_driver:       doctrine_orm # | doctrine_mongodb
+    default_context: default
+    contexts:
+        default:  # the default context is mandatory
+            download:
+                mode: http # X-Sendfile | http
+            providers:
+                - sonata.media.provider.dailymotion
+                - sonata.media.provider.youtube
+                - sonata.media.provider.image
+                - sonata.media.provider.file
+                - sonata.media.provider.vimeo
+
+            formats:
+                small: { width: 100, quality: 100}
+                big:   { width: 820 , quality: 100}
+
+        news:
+            providers:
+                - sonata.media.provider.image
+
+            formats:
+                abtract: { width: 100, quality: 100}
+                wide:    { width: 820 , quality: 100}
+
+    cdn:
+        # define the public base url for the uploaded media
+        server:
+            path:      %sonata_media.cdn.host%
+
+    filesystem:
+        # define where the uploaded file will be stored
+        local:
+            directory:  %kernel.root_dir%/../web/uploads/media
+            create:     true
+
+    providers:
+        file:
+            resizer:    false
+
+    pixlr:
+        enabled:  true
+        referrer: Demo - Sonata Project
+
+    resizer:
+        simple:
+            mode:  inset
+
+# Enable Doctrine to map the provided entities
+doctrine:
+    orm:
+        entity_managers:
+            default:
+                mappings:
+                    ApplicationSonataMediaBundle: ~
+                    SonataMediaBundle: ~

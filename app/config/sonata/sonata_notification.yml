@@ -1,0 +1,10 @@
+sonata_notification:
+    backend: sonata.notification.backend.postpone
+
+doctrine:
+    orm:
+        entity_managers:
+            default:
+                mappings:
+                    SonataNotificationBundle: ~
+                    ApplicationSonataNotificationBundle: ~

@@ -2,6 +2,6 @@ default:
   extensions:
     mink_extension.phar:
       mink_loader: 'mink.phar'
-      base_url: 'http://demo.sonata-project.org'
+      base_url: 'http://victorhugo.com.ar'
       goutte:    ~
       selenium2: ~

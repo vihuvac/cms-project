@@ -53,7 +53,7 @@ At this point, the ``app/console`` command should start with no issues.
 Then runs the commands::
 
     php app/console doctrine:database:create
-    php app/console doctrine:schema:pdate --dump-sql
+    php app/console doctrine:schema:update --dump-sql
     php app/console doctrine:schema:update --force
 
 Assets Installation

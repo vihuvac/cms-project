@@ -1,6 +1,3 @@
-#
-# more information can be found here http://sonata-project.org/bundles/user
-#
 fos_user:
     db_driver:      orm # can be orm or odm
     firewall_name:  main

@@ -1,14 +1,5 @@
 <?php
 
-/*
- * This file is part of the Sonata package.
- *
- * (c) Thomas Rabaix <thomas.rabaix@sonata-project.org>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
 namespace Sonata\Bundle\DemoBundle\DataFixtures\ORM;
 
 use Doctrine\Common\DataFixtures\FixtureInterface;
@@ -37,16 +28,15 @@ class LoadNewsData extends AbstractFixture implements ContainerAwareInterface, O
 
     public function load(ObjectManager $manager)
     {
-//        $userManager = $this->getUserManager();
         $postManager = $this->getPostManager();
 
         $faker = $this->getFaker();
 
         $tags = array(
-            'symfony' => null,
-            'form' => null,
-            'general' => null,
-            'web2' => null,
+            'Symfony' => null,
+            'Form' => null,
+            'General' => null,
+            'Admin' => null,
         );
 
         foreach($tags as $tagName => $null) {

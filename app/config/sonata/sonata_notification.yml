@@ -1,6 +1,7 @@
 sonata_notification:
     backend: sonata.notification.backend.postpone
 
+# Enable Doctrine to map the provided entities
 doctrine:
     orm:
         entity_managers:

@@ -1,6 +1,15 @@
 {
-    "name": "sonata-project/sandbox",
-    "description": "Sonata Project's sandbox",
+    "name": "vihuvac/website",
+    "license": "MIT",
+    "type": "project",
+    "description": "The new website version with Symfony & Sandbox",
+    "authors": [
+        {
+            "name":     "Víctor Hugo Valle Castillo",
+            "email":    "victouk@gmail.com",
+            "homepage": "http://victorhugo.com.ar"
+        }
+    ],
 
     "autoload": {
         "psr-0": { "": "src/" }
@@ -86,9 +95,7 @@
 
     "extra": {
         "symfony-app-dir": "app",
-        "symfony-web-dir": "web"
-    },
-    "extra": {
+        "symfony-web-dir": "web",
         "branch-alias": {
             "dev-master": "2.3.x-dev"
         }

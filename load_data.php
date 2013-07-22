@@ -40,7 +40,7 @@ $output->writeln("<info>Resetting demo</info>");
 $fs->remove(sprintf('%s/web/uploads/media', $rootDir));
 $fs->mkdir(sprintf('%s/web/uploads/media', $rootDir));
 
-$fs->copy(__DIR__.'/src/Sonata/Bundle/DemoBundle/DataFixtures/data/robots.txt', __DIR__.'/web/robots.txt', true);
+$fs->copy(__DIR__.'/src/Vihuvac/Bundle/WebsiteBundle/DataFixtures/data/robots.txt', __DIR__.'/web/robots.txt', true);
 
 execute_commands(array(
     'app/console cache:warmup --env=dev',

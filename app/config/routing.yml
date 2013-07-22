@@ -1,5 +1,10 @@
-sonata_demo:
-    resource: "@SonataDemoBundle/Resources/config/routing/demo.xml"
+website_bundle_controller:
+    resource: "@WebsiteBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+website_bundle_routing:
+    resource: "@WebsiteBundle/Resources/config/routing/website.yml"
 
 fos_user_security:
     resource: "@FOSUserBundle/Resources/config/routing/security.xml"

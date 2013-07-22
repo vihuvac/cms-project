@@ -56,7 +56,6 @@ class AppKernel extends Kernel
             // MEDIA
             new Sonata\MediaBundle\SonataMediaBundle(),
             new Application\Sonata\MediaBundle\ApplicationSonataMediaBundle(),
-            // new Liip\ImagineBundle\LiipImagineBundle(),
 
             // SONATA CORE & HELPER BUNDLES
             new Sonata\EasyExtendsBundle\SonataEasyExtendsBundle(),
@@ -74,11 +73,11 @@ class AppKernel extends Kernel
             // CMF Integration
             new Symfony\Cmf\Bundle\RoutingBundle\CmfRoutingBundle(),
 
-            // DEMO
-            new Sonata\Bundle\DemoBundle\SonataDemoBundle(),
-
             // Enable this if you want to audit backend action
             new SimpleThings\EntityAudit\SimpleThingsEntityAuditBundle(),
+
+            // Website
+            new Vihuvac\Bundle\WebsiteBundle\WebsiteBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

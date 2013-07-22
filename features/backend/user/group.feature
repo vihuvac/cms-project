@@ -47,6 +47,3 @@ Scenario: Delete a group
   And I follow "Delete"
   And I press "Yes, delete"
   Then I should see "Item has been deleted successfully."
-
-
-

@@ -41,6 +41,7 @@ class LoadMediaData extends AbstractFixture implements ContainerAwareInterface, 
             ->in(__DIR__.'/../data/files');
 
         $i = 0;
+
         foreach ($files as $pos => $file) {
             $media = $manager->create();
             $media->setBinaryContent($file);
@@ -54,6 +55,11 @@ class LoadMediaData extends AbstractFixture implements ContainerAwareInterface, 
             $this->addMedia($gallery, $media);
         }
 
+        /**
+         * Uncomment the array of videos in case of adding any video to the main gallery,
+         * the same will be shown in the home page.
+         */
+        /*
         $videos = array(
             'ocAyDZC2aiU' => 'sonata.media.provider.youtube',
             'xdw0tz'      => 'sonata.media.provider.dailymotion',
@@ -69,6 +75,7 @@ class LoadMediaData extends AbstractFixture implements ContainerAwareInterface, 
 
             $this->addMedia($gallery, $media);
         }
+        */
 
         $gallery->setEnabled(true);
         $gallery->setName($faker->sentence(4));

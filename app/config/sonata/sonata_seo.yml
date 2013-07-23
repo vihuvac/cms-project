@@ -2,7 +2,7 @@ sonata_seo:
     encoding:             UTF-8
     page:
         default:          sonata.seo.page.default
-        title:            Victor Hugo Website
+        title:            Victor Hugo Valle Website
         metas:
             name:
                 keywords:             foo bar

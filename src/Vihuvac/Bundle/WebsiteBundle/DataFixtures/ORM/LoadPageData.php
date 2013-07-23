@@ -274,7 +274,6 @@ CONTENT
         $text->setEnabled(true);
         $text->setPage($galleryIndex);
 
-
         $pageManager->save($galleryIndex);
     }
 
@@ -346,7 +345,7 @@ CONTENT
         $media->setDecorate(1);
         $media->setRequestMethod('GET|POST|HEAD|DELETE|PUT');
         $media->setTemplateCode('default');
-        $media->setRouteName('sonata_demo_media');
+        $media->setRouteName('vihuvac_website_default_media');
         $media->setSite($site);
         $media->setParent($this->getReference('page-homepage'));
 
@@ -387,10 +386,10 @@ CONTENT
         $text->setType('sonata.block.service.text');
         $text->setSetting('content', <<<CONTENT
 
-<h2>Admin Bundle</h2>
+<h2>Website Admin Dashboard</h2>
 
 <div>
-    You can connect to the <a href="/admin/dashboard">admin section</a> by using two different accounts : <br>
+    You can connect to the <a href="/admin/dashboard">admin section</a> by using two different accounts: <br>
 
     <ul>
         <li>Login: admin - Password: admin</li>
@@ -404,7 +403,7 @@ CONTENT
     <br />
     <br />
     <center>
-        <img src="/bundles/sonatademo/images/secure_qr_code.png" class="img-polaroid" />
+        <img src="/bundles/website/images/useful/secure_qr_code.png" class="img-polaroid" />
         <br />
         <em>Take a shot of this QR Code with <a href="https://support.google.com/accounts/bin/answer.py?hl=en&answer=1066447">Google Authenticator</a></em>
     </center>
@@ -483,15 +482,15 @@ CONTENT
 
 <script type="text/javascript">
 
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-25614705-2']);
-  _gaq.push(['_trackPageview']);
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-34787339-1']);
+    _gaq.push(['_trackPageview']);
 
-  (function() {
+    (function() {
     var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
+    })();
 
 </script>
 FOOTER

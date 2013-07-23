@@ -21,9 +21,9 @@ parameters:
     sonata_admin.logo_title:        /bundles/sonataadmin/logo_title.png
 
     # Sonata News Options
-    sonata_news.blog_title:         Victor Hugo Website Blog
+    sonata_news.blog_title:         Victor Hugo Valle Website Blog
     sonata_news.blog_link:          http://victorhugo.com.ar
-    sonata_news.blog_description:   Victor Hugo Website Blog 2013
+    sonata_news.blog_description:   Victor Hugo Valle Website Blog 2013
     sonata_news.salt:               ThisTokenIsNotSoSecretChangeIt
     sonata_news.comment.emails:     [webmater@victorhugo.com.ar]
     sonata_news.comment.email_from: no-reply@victorhugo.com.ar

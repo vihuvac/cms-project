@@ -46,7 +46,7 @@ class LoadMediaData extends AbstractFixture implements ContainerAwareInterface, 
             $media = $manager->create();
             $media->setBinaryContent($file);
             $media->setEnabled(true);
-            $media->setDescription($faker->sentence(15));
+            $media->setDescription($faker->sentence(10));
 
             $this->addReference('sonata-media-'.($i++), $media);
 
@@ -78,7 +78,7 @@ class LoadMediaData extends AbstractFixture implements ContainerAwareInterface, 
         */
 
         $gallery->setEnabled(true);
-        $gallery->setName($faker->sentence(4));
+        $gallery->setName('Wallpaper Collection in High Quality');
         $gallery->setDefaultFormat('small');
         $gallery->setContext('default');
 

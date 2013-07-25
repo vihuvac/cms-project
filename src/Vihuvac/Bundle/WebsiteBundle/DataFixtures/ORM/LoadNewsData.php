@@ -34,9 +34,9 @@ class LoadNewsData extends AbstractFixture implements ContainerAwareInterface, O
 
         $tags = array(
             'Symfony' => null,
-            'Form' => null,
+            'Form'    => null,
             'General' => null,
-            'Admin' => null,
+            'Admin'   => null,
         );
 
         foreach($tags as $tagName => $null) {

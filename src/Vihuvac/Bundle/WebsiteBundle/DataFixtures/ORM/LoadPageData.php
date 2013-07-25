@@ -119,7 +119,7 @@ CONTENT
         $content->addChildren($gallery = $blockManager->create());
         $gallery->setType('sonata.media.block.gallery');
         $gallery->setSetting('galleryId', $this->getReference('media-gallery')->getId());
-        $gallery->setSetting('title', $faker->sentence(4));
+        $gallery->setSetting('title', 'Wallpaper Collection in High Quality');
         $gallery->setSetting('context', 'default');
         $gallery->setSetting('format', 'big');
         $gallery->setPosition(2);
@@ -362,8 +362,8 @@ CONTENT
         $blockInteractor = $this->getBlockInteractor();
 
         $this->addReference('page-user', $userPage = $pageManager->create());
-        $userPage->setSlug('/user');
-        $userPage->setUrl('/user');
+        $userPage->setSlug('/user-credentials');
+        $userPage->setUrl('/user-credentials');
         $userPage->setName('Admin');
         $userPage->setEnabled(true);
         $userPage->setDecorate(1);

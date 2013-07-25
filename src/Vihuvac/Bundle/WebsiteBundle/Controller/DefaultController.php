@@ -23,7 +23,7 @@ class DefaultController extends Controller
     {
         // preset a default value
         $media = $this->get('sonata.media.manager.media')->create();
-        $media->setBinaryContent('http://www.youtube.com/watch?v=qTVfFmENgPU');
+        $media->setBinaryContent('http://www.youtube.com/watch?v=dU1xS07N-FA');
 
         // create the target object
         $mediaPreview = new MediaPreview();

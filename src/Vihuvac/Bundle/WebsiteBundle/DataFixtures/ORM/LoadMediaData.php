@@ -46,7 +46,35 @@ class LoadMediaData extends AbstractFixture implements ContainerAwareInterface, 
             $media = $manager->create();
             $media->setBinaryContent($file);
             $media->setEnabled(true);
-            $media->setDescription($faker->sentence(10));
+            /**
+             * Uncomment the line below to allow the faker generates a description automatically for each picture.
+             */
+            //$media->setDescription($faker->sentence(10));
+
+            /**
+             * If the line above was uncommented, all these lines of 'if evaluations' should be commented.
+             */
+            if ($i == 0) {
+                $media->setDescription('Machu Picchu Peru.');
+            } elseif ($i == 1) {
+                $media->setDescription('Lake Titicaca Peru.');
+            } elseif ($i == 2) {
+                $media->setDescription('Ruins in Arequipa Peru.');
+            } elseif ($i == 3) {
+                $media->setDescription('Summer Holiday.');
+            } elseif ($i == 4) {
+                $media->setDescription('Beautiful Dream Beach.');
+            } elseif ($i == 5) {
+                $media->setDescription('Heart Island.');
+            } elseif ($i == 6) {
+                $media->setDescription('On Boat in a Tropical Beach.');
+            } elseif ($i == 7) {
+                $media->setDescription('Summer Holiday in a Tropical Beach.');
+            } elseif ($i == 8) {
+                $media->setDescription('Around the Mountain in New Zealand.');
+            } else {
+                $media->setDescription('These pictures belongs to the wallpaper collection in HQ');
+            }
 
             $this->addReference('sonata-media-'.($i++), $media);
 

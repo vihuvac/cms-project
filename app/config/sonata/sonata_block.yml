@@ -6,10 +6,10 @@ sonata_block:
         sonata.admin.block.admin_list:
             contexts:   [admin]
 
+        sonata.block.service.rss:
         sonata.block.service.text:
+        sonata.media.block.feature_media:
+        sonata.media.block.gallery:
+        sonata.media.block.media:
         sonata.page.block.container:
         sonata.page.block.children_pages:
-        sonata.block.service.rss:
-        sonata.media.block.media:
-        sonata.media.block.gallery:
-        sonata.media.block.feature_media:

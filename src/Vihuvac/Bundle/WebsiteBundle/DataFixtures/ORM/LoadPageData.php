@@ -66,7 +66,10 @@ class LoadPageData extends AbstractFixture implements ContainerAwareInterface, O
         $blockManager = $this->getBlockManager();
         $blockInteractor = $this->getBlockInteractor();
 
-        $faker = $this->getFaker();
+        /**
+         * In case of using the faker, uncomment the faker generator function at the end of this file.
+         */
+        //$faker = $this->getFaker();
 
         $this->addReference('page-homepage', $homepage = $pageManager->create());
         $homepage->setSlug('/');
@@ -119,7 +122,7 @@ CONTENT
         $content->addChildren($gallery = $blockManager->create());
         $gallery->setType('sonata.media.block.gallery');
         $gallery->setSetting('galleryId', $this->getReference('media-gallery')->getId());
-        $gallery->setSetting('title', 'Wallpaper Collection in High Quality');
+        $gallery->setSetting('title', $this->getReference('media-gallery')->getName());
         $gallery->setSetting('context', 'default');
         $gallery->setSetting('format', 'big');
         $gallery->setPosition(2);
@@ -529,10 +532,12 @@ FOOTER
     /**
      * @return \Faker\Generator
      */
+    /*
     public function getFaker()
     {
         return $this->container->get('faker.generator');
     }
+    */
 
     /**
      * @return \Sonata\PageBundle\Entity\BlockInteractor

@@ -34,7 +34,11 @@ class LoadMediaData extends AbstractFixture implements ContainerAwareInterface, 
         $gallery = $this->getGalleryManager()->create();
 
         $manager = $this->getMediaManager();
-        $faker = $this->getFaker();
+
+        /**
+         * In case of using the faker, uncomment the faker generator function at the end of this file.
+         */
+        //$faker = $this->getFaker();
 
         $files = Finder::create()
             ->name('*.JPG')
@@ -149,8 +153,10 @@ class LoadMediaData extends AbstractFixture implements ContainerAwareInterface, 
     /**
      * @return \Faker\Generator
      */
+    /*
     public function getFaker()
     {
         return $this->container->get('faker.generator');
     }
+    */
 }

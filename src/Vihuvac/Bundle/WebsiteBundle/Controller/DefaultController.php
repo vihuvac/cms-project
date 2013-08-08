@@ -12,6 +12,15 @@ use Vihuvac\Bundle\WebsiteBundle\Entity\MediaPreview;
 class DefaultController extends Controller
 {
     /**
+     * @Route("/biography")
+     * @Template()
+     */
+    public function biographyAction()
+    {
+        return array();
+    }
+
+    /**
      * @param \Symfony\Component\HttpFoundation\Request $request
      *
      * @return \Symfony\Component\HttpFoundation\Response

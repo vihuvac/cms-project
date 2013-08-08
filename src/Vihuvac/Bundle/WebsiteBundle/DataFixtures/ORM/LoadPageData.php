@@ -99,6 +99,7 @@ class LoadPageData extends AbstractFixture implements ContainerAwareInterface, O
         $content->addChildren($text = $blockManager->create());
         $text->setType('sonata.block.service.text');
         $text->setSetting('content', <<<CONTENT
+
 <h1>Welcome</h1>
 
 <p>
@@ -112,6 +113,7 @@ class LoadPageData extends AbstractFixture implements ContainerAwareInterface, O
     <a href="https://github.com/sonata-project/SonataMediaBundle/blob/master/Block/GalleryBlockService.php">Block service</a>
     provided by the <code>SonataMediaBundle</code>.
 </p>
+
 CONTENT
 );
         $text->setPosition(1);
@@ -135,6 +137,7 @@ CONTENT
         $text->setPosition(3);
         $text->setEnabled(true);
         $text->setSetting('content', <<<CONTENT
+
 <h3>Sonata's bundles</h3>
 
 <p>
@@ -146,6 +149,7 @@ CONTENT
         <li><a href="/blog">Blog (SonataNewsBundle)</a></li>
     </ul>
 </p>
+
 CONTENT
 );
 
@@ -183,22 +187,22 @@ CONTENT
         $blockManager = $this->getBlockManager();
         $blockInteractor = $this->getBlockInteractor();
 
-        $biographyIndex = $pageManager->create();
-        $biographyIndex->setSlug('/biography');
-        $biographyIndex->setUrl('/biography');
-        $biographyIndex->setName('Biography');
-        $biographyIndex->setEnabled(true);
-        $biographyIndex->setDecorate(1);
-        $biographyIndex->setRequestMethod('GET|POST|HEAD|DELETE|PUT');
-        $biographyIndex->setTemplateCode('default');
-        $biographyIndex->setRouteName('page_slug');
-        $biographyIndex->setParent($this->getReference('page-homepage'));
-        $biographyIndex->setSite($site);
+        $biography = $pageManager->create();
+        $biography->setSlug('biography');
+        $biography->setUrl('/biography');
+        $biography->setName('Biography');
+        $biography->setEnabled(true);
+        $biography->setDecorate(1);
+        $biography->setRequestMethod('GET|POST|HEAD|DELETE|PUT');
+        $biography->setTemplateCode('default');
+        $biography->setRouteName('page_slug');
+        $biography->setParent($this->getReference('page-homepage'));
+        $biography->setSite($site);
 
         // CREATE A HEADER BLOCK
-        $biographyIndex->addBlocks($content = $blockInteractor->createNewContainer(array(
+        $biography->addBlocks($content = $blockInteractor->createNewContainer(array(
             'enabled' => true,
-            'page' => $biographyIndex,
+            'page' => $biography,
             'code' => 'content_top',
         )));
 
@@ -218,13 +222,14 @@ CONTENT
     If you are connected as an admin you can click on <code>Show Zone</code> to see the different editable areas. Once
     areas are displayed, just double click on one to edit it.
 </p>
+
 CONTENT
 );
         $text->setPosition(1);
         $text->setEnabled(true);
-        $text->setPage($biographyIndex);
+        $text->setPage($biography);
 
-        $pageManager->save($biographyIndex);
+        $pageManager->save($biography);
     }
 
     /**
@@ -271,6 +276,7 @@ CONTENT
 </p>
 
 <h1>Gallery List</h1>
+
 CONTENT
 );
         $text->setPosition(1);
@@ -290,7 +296,7 @@ CONTENT
         $blockInteractor = $this->getBlockInteractor();
 
         $faqIndex = $pageManager->create();
-        $faqIndex->setSlug('/frequently-asked-questions');
+        $faqIndex->setSlug('frequently-asked-questions');
         $faqIndex->setUrl('/frequently-asked-questions');
         $faqIndex->setName('Faq');
         $faqIndex->setEnabled(true);
@@ -324,6 +330,7 @@ CONTENT
     If you are connected as an admin you can click on <code>Show Zone</code> to see the different editable areas. Once
     areas are displayed, just double click on one to edit it.
 </p>
+
 CONTENT
 );
         $text->setPosition(1);
@@ -341,7 +348,7 @@ CONTENT
         $pageManager = $this->getPageManager();
 
         $this->addReference('page-media', $media = $pageManager->create());
-        $media->setSlug('/media');
+        $media->setSlug('media');
         $media->setUrl('/media');
         $media->setName('Media & Seo');
         $media->setEnabled(true);
@@ -365,7 +372,7 @@ CONTENT
         $blockInteractor = $this->getBlockInteractor();
 
         $this->addReference('page-user', $userPage = $pageManager->create());
-        $userPage->setSlug('/user-credentials');
+        $userPage->setSlug('user-credentials');
         $userPage->setUrl('/user-credentials');
         $userPage->setName('Admin');
         $userPage->setEnabled(true);
@@ -481,7 +488,8 @@ CONTENT
 
         $text->setType('sonata.block.service.text');
         $text->setSetting('content', <<<FOOTER
-        <a href="http://www.victorhugo.com.ar">&copy; 2004 - 2013</a> Victor Hugo Valle Website.
+
+<a style="margin-left: 37%;" href="http://www.victorhugo.com.ar">&copy; 2004 - 2013</a> Victor Hugo Valle Website.
 
 <script type="text/javascript">
 
@@ -496,6 +504,7 @@ CONTENT
     })();
 
 </script>
+
 FOOTER
 );
         $text->setPosition(1);

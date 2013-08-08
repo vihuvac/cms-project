@@ -75,12 +75,13 @@ Sonata Page Bundle
 
 By default the Sonata Page bundle is activated, so you need to starts 2 commands before going further::
 
-    php app/console sonata:page:create-site --enabled=true --name=localhost --host=localhost --relativePath=/ --enabledFrom=now --enabledTo="+10 years" --default=true
+    php app/console sonata:page:create-site --enabled=true --name=localhost --host=localhost --relativePath=/ --enabledFrom=now --enabledTo="+10 years" --default=1
     php app/console sonata:page:update-core-routes --site=all
     php app/console sonata:page:create-snapshots --site=all
 
 Note:
 
+In the previous version the parameter ``--default`` was passed with a ``true`` value, then it was ``--default=true``. Right now its value has been replaced by an integer value, that's why the last parameter of the command was modified to ``--default=1``.
 The ``update-core-routes`` populates the database with ``page`` from the routing information.
 The ``create-snapshots`` create a snapshot (a public page version) from the created pages.
 

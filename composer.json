@@ -2,7 +2,7 @@
     "name": "vihuvac/website",
     "license": "MIT",
     "type": "project",
-    "description": "The new website version with Symfony & Sandbox",
+    "description": "The New Website Version with Symfony & Sandbox",
     "authors": [
         {
             "name":     "Víctor Hugo Valle Castillo",
@@ -14,8 +14,6 @@
     "autoload": {
         "psr-0": { "": "src/" }
     },
-
-    "license": "MIT",
 
     "require": {
         "php": ">=5.3.3",

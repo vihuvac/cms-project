@@ -489,7 +489,7 @@ CONTENT
         $text->setType('sonata.block.service.text');
         $text->setSetting('content', <<<FOOTER
 
-<a style="margin-left: 37%;" href="http://www.victorhugo.com.ar">&copy; 2004 - 2013</a> Victor Hugo Valle Website.
+<a href="http://www.victorhugo.com.ar">&copy; 2004 - 2013</a> Victor Hugo Valle Website.
 
 <script type="text/javascript">
 

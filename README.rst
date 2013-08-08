@@ -63,13 +63,6 @@ Your frontend still looking weird because bundle assets are not installed. Run t
 
     php app/console assets:install --symlink web
 
-Fixtures
-~~~~~~~~
-
-To have some actual data in the DB, we should load the fixtures by running::
-
-    php app/console doctrine:fixtures:load
-
 Sonata Page Bundle
 ~~~~~~~~~~~~~~~~~~
 
@@ -81,9 +74,16 @@ By default the Sonata Page bundle is activated, so you need to starts 2 commands
 
 Note:
 
-In the previous version the parameter ``--default`` was passed with a ``true`` value, then it was ``--default=true``. Right now its value has been replaced by an integer value, that's why the last parameter of the command was modified to ``--default=1``.
+In the previous version the parameter ``--default`` was passed with a ``true`` value. Right now its value has been replaced by an integer value, that's why the last parameter of the command was modified to ``--default=1``.
 The ``update-core-routes`` populates the database with ``page`` from the routing information.
 The ``create-snapshots`` create a snapshot (a public page version) from the created pages.
+
+Fixtures
+~~~~~~~~
+
+To have some actual data in the DB, we should load the fixtures by running::
+
+    php app/console doctrine:fixtures:load
 
 
 Unit Testing

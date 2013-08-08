@@ -110,7 +110,7 @@ class LoadMediaData extends AbstractFixture implements ContainerAwareInterface, 
         */
 
         $gallery->setEnabled(true);
-        $gallery->setName('Wallpaper Collection in High Quality');
+        $gallery->setName('My Wallpapers Collection in HQ');
         $gallery->setDefaultFormat('small');
         $gallery->setContext('default');
 

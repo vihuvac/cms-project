@@ -46,7 +46,10 @@ class LoadUserData extends AbstractFixture implements ContainerAwareInterface, O
         $user->setEnabled(true);
         $user->setSuperAdmin(true);
         $user->setLocked(false);
-        // google chart qr code : https://www.google.com/chart?chs=200x200&chld=M|0&cht=qr&chl=otpauth://totp/secure@http://demo.sonata-project.org%3Fsecret%3D4YU4QGYPB63HDN2C
+        /**
+         * Google Chart QR Code :
+         * https://www.google.com/chart?chs=200x200&chld=M|0&cht=qr&chl=otpauth://totp/secure@http://demo.sonata-project.org%3Fsecret%3D4YU4QGYPB63HDN2C
+         */
         $user->setTwoStepVerificationCode('4YU4QGYPB63HDN2C');
 
         $manager->updateUser($user);

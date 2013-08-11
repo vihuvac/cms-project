@@ -35,8 +35,8 @@ class LoadNewsData extends AbstractFixture implements ContainerAwareInterface, O
         $tags = array(
             'Symfony' => null,
             'Form'    => null,
-            'General' => null,
-            'Admin'   => null,
+            'Gallery' => null,
+            'General' => null
         );
 
         foreach($tags as $tagName => $null) {
@@ -59,7 +59,8 @@ class LoadNewsData extends AbstractFixture implements ContainerAwareInterface, O
 
             $id = $this->getReference('sonata-media-'.rand(2, 7))->getId();
 
-            $raw =<<<RAW
+            $raw = <<<RAW
+
 ### Gist Formatter
 
 Now a specific gist from github
@@ -74,7 +75,6 @@ Load a media from a <code>SonataMediaBundle</code> with a specific format
 
 RAW
 ;
-
             $raw .= sprintf("### %s\n\n%s\n\n### %s\n\n%s",
                 $faker->sentence(rand(3, 6)),
                 $faker->text(1000),

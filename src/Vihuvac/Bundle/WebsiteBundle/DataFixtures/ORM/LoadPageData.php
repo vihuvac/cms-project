@@ -437,6 +437,7 @@ CONTENT
         $menu->setEnabled(true);
         $menu->setPage($global);
 
+        // CREATE A FOOTER BLOCK
         $global->addBlocks($footer = $blockInteractor->createNewContainer(array(
             'enabled' => true,
             'page' => $global,

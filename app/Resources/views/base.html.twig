@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="{% block lang %}en{% endblock %}">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>{% block title %}Victor Hugo Valle Website{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.png') }}" />

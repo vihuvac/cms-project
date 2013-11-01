@@ -66,11 +66,6 @@ class LoadPageData extends AbstractFixture implements ContainerAwareInterface, O
         $blockManager = $this->getBlockManager();
         $blockInteractor = $this->getBlockInteractor();
 
-        /**
-         * In case of using the faker, uncomment the faker generator function at the end of this file.
-         */
-        //$faker = $this->getFaker();
-
         $this->addReference('page-homepage', $homepage = $pageManager->create());
         $homepage->setSlug('/');
         $homepage->setUrl('/');
@@ -98,24 +93,8 @@ class LoadPageData extends AbstractFixture implements ContainerAwareInterface, O
         // add a block text
         $content->addChildren($text = $blockManager->create());
         $text->setType('sonata.block.service.text');
-        $text->setSetting('content', <<<CONTENT
+        $text->setSetting('content', $this->templatingEngine()->render('WebsiteBundle:ORM:main_header.html.twig'));
 
-<h1>Welcome</h1>
-
-<p>
-    This page is a demo of the Sonata Sandbox available on <a href="https://github.com/sonata-project/sandbox">github</a>.
-    This demo try to be interactive so you will be able to found out the different features provided by the Sonata's Bundle.
-</p>
-
-<p>
-    First this page and all the other pages are served by the <code>SonataPageBundle</code>, a page is composed by different
-    blocks. A block is linked to a service. For instance the current gallery is served by a
-    <a href="https://github.com/sonata-project/SonataMediaBundle/blob/master/Block/GalleryBlockService.php">Block service</a>
-    provided by the <code>SonataMediaBundle</code>.
-</p>
-
-CONTENT
-);
         $text->setPosition(1);
         $text->setEnabled(true);
         $text->setPage($homepage);
@@ -126,7 +105,7 @@ CONTENT
         $gallery->setSetting('galleryId', $this->getReference('media-gallery')->getId());
         $gallery->setSetting('title', $this->getReference('media-gallery')->getName());
         $gallery->setSetting('context', 'default');
-        $gallery->setSetting('format', 'big');
+        $gallery->setSetting('format', 'high');
         $gallery->setPosition(2);
         $gallery->setEnabled(true);
         $gallery->setPage($homepage);
@@ -136,22 +115,7 @@ CONTENT
 
         $text->setPosition(3);
         $text->setEnabled(true);
-        $text->setSetting('content', <<<CONTENT
-
-<h3>Sonata's bundles</h3>
-
-<p>
-    Some bundles does not have direct visual representation as they provide services. However, others does have
-    a lot to show :
-
-    <ul>
-        <li><a href="/admin/dashboard">Admin (SonataAdminBundle)</a></li>
-        <li><a href="/blog">Blog (SonataNewsBundle)</a></li>
-    </ul>
-</p>
-
-CONTENT
-);
+        $text->setSetting('content', $this->templatingEngine()->render('WebsiteBundle:ORM:main_footer.html.twig'));
 
         $pageManager->save($homepage);
     }
@@ -426,7 +390,6 @@ CONTENT
         $text->setEnabled(true);
         $text->setPage($userPage);
 
-
         $pageManager->save($userPage);
     }
 
@@ -451,7 +414,6 @@ CONTENT
         )));
 
         $title->setName('The title container');
-
         $title->addChildren($text = $blockManager->create());
 
         $text->setType('sonata.block.service.text');
@@ -467,7 +429,6 @@ CONTENT
         )));
 
         $header->setName('The header container');
-
         $header->addChildren($menu = $blockManager->create());
 
         $menu->setType('sonata.page.block.children_pages');
@@ -483,30 +444,10 @@ CONTENT
         )));
 
         $footer->setName('The footer container');
-
         $footer->addChildren($text = $blockManager->create());
 
         $text->setType('sonata.block.service.text');
-        $text->setSetting('content', <<<FOOTER
-
-<a href="http://www.victorhugo.com.ar">&copy; 2004 - 2013</a> Victor Hugo Valle Website.
-
-<script type="text/javascript">
-
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-34787339-1']);
-    _gaq.push(['_trackPageview']);
-
-    (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-
-</script>
-
-FOOTER
-);
+        $text->setSetting('content', $this->templatingEngine()->render('WebsiteBundle:ORM:global_footer.html.twig'));
         $text->setPosition(1);
         $text->setEnabled(true);
         $text->setPage($global);
@@ -539,20 +480,18 @@ FOOTER
     }
 
     /**
-     * @return \Faker\Generator
-     */
-    /*
-    public function getFaker()
-    {
-        return $this->container->get('faker.generator');
-    }
-    */
-
-    /**
      * @return \Sonata\PageBundle\Entity\BlockInteractor
      */
     public function getBlockInteractor()
     {
         return $this->container->get('sonata.page.block_interactor');
+    }
+
+    /**
+     * Templating Engine Function
+     */
+    public function templatingEngine()
+    {
+        return $this->container->get('templating');
     }
 }

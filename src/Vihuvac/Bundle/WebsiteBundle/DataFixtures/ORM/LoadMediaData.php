@@ -35,11 +35,6 @@ class LoadMediaData extends AbstractFixture implements ContainerAwareInterface, 
 
         $manager = $this->getMediaManager();
 
-        /**
-         * In case of using the faker, uncomment the faker generator function at the end of this file.
-         */
-        //$faker = $this->getFaker();
-
         $files = Finder::create()
             ->name('*.JPG')
             ->in(__DIR__.'/../data/files');
@@ -50,32 +45,21 @@ class LoadMediaData extends AbstractFixture implements ContainerAwareInterface, 
             $media = $manager->create();
             $media->setBinaryContent($file);
             $media->setEnabled(true);
-            /**
-             * Uncomment the line below to allow the faker generates a description automatically for each picture.
-             */
-            //$media->setDescription($faker->sentence(10));
+            
+            $descriptions = [
+                'IMG_001.JPG' => 'Machu Picchu Peru.',
+                'IMG_002.JPG' => 'Lake Titicaca Peru.',
+                'IMG_003.JPG' => 'Ruins in Arequipa Peru.',
+                'IMG_004.JPG' => 'Summer Holiday.',
+                'IMG_005.JPG' => 'Beautiful Dream Beach.',
+                'IMG_006.JPG' => 'Heart Island.',
+                'IMG_007.JPG' => 'On Boat in a Tropical Beach.',
+                'IMG_008.JPG' => 'Summer Holiday in a Tropical Beach.',
+                'IMG_009.JPG' => 'Around the Mountain in New Zealand.',
+            ];
 
-            /**
-             * If the line above was uncommented, all these lines of 'if evaluations' should be commented.
-             */
-            if ($i == 0) {
-                $media->setDescription('Machu Picchu Peru.');
-            } elseif ($i == 1) {
-                $media->setDescription('Lake Titicaca Peru.');
-            } elseif ($i == 2) {
-                $media->setDescription('Ruins in Arequipa Peru.');
-            } elseif ($i == 3) {
-                $media->setDescription('Summer Holiday.');
-            } elseif ($i == 4) {
-                $media->setDescription('Beautiful Dream Beach.');
-            } elseif ($i == 5) {
-                $media->setDescription('Heart Island.');
-            } elseif ($i == 6) {
-                $media->setDescription('On Boat in a Tropical Beach.');
-            } elseif ($i == 7) {
-                $media->setDescription('Summer Holiday in a Tropical Beach.');
-            } elseif ($i == 8) {
-                $media->setDescription('Around the Mountain in New Zealand.');
+            if (isset($descriptions[$file->getFileName()])) {
+                $media->setDescription($descriptions[$file->getFileName()]);
             } else {
                 $media->setDescription('These pictures belongs to the wallpaper collection in HQ');
             }
@@ -91,23 +75,21 @@ class LoadMediaData extends AbstractFixture implements ContainerAwareInterface, 
          * Uncomment the array of videos in case of adding any video to the main gallery,
          * the same will be shown in the home page.
          */
-        /*
-        $videos = array(
-            'ocAyDZC2aiU' => 'sonata.media.provider.youtube',
-            'xdw0tz'      => 'sonata.media.provider.dailymotion',
-            '9636197'     => 'sonata.media.provider.vimeo'
-        );
+        //$videos = array(
+        //    'ocAyDZC2aiU' => 'sonata.media.provider.youtube',
+        //    'xdw0tz'      => 'sonata.media.provider.dailymotion',
+        //    '9636197'     => 'sonata.media.provider.vimeo'
+        //);
 
-        foreach ($videos as $video => $provider) {
-            $media = $manager->create();
-            $media->setBinaryContent($video);
-            $media->setEnabled(true);
+        //foreach ($videos as $video => $provider) {
+        //    $media = $manager->create();
+        //    $media->setBinaryContent($video);
+        //    $media->setEnabled(true);
 
-            $manager->save($media, 'default', $provider);
+        //    $manager->save($media, 'default', $provider);
 
-            $this->addMedia($gallery, $media);
-        }
-        */
+        //    $this->addMedia($gallery, $media);
+        //}
 
         $gallery->setEnabled(true);
         $gallery->setName('My Wallpapers Collection in HQ');
@@ -149,14 +131,4 @@ class LoadMediaData extends AbstractFixture implements ContainerAwareInterface, 
     {
         return $this->container->get('sonata.media.manager.gallery');
     }
-
-    /**
-     * @return \Faker\Generator
-     */
-    /*
-    public function getFaker()
-    {
-        return $this->container->get('faker.generator');
-    }
-    */
 }

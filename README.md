@@ -51,11 +51,11 @@ Then edit the ```app/config/parameters.yml``` file.
 
 ## Database initialization
 
-At this point, the ``app/console`` command should start with no issues.
+At this point, the ```app/console``` command should start with no issues.
 
 Then runs the commands:
 
-``
+```
 php app/console doctrine:database:create
 php app/console doctrine:schema:update --dump-sql
 php app/console doctrine:schema:update --force

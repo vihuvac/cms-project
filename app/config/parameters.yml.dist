@@ -1,9 +1,9 @@
 parameters:
-    database_driver:   pdo_mysql
-    database_host:     127.0.0.1
-    database_name:
-    database_user:
-    database_password:
+    database_driver:    pdo_mysql
+    database_host:      127.0.0.1
+    database_name:      
+    database_user:      
+    database_password:  
 
     mailer_transport:   smtp
     mailer_host:        smtp.gmail.com

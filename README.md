@@ -1,4 +1,4 @@
-CMS Project with Symfony2
+CMS Project in Symfony2
 =========================
 
 What's inside?

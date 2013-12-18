@@ -4,7 +4,7 @@ CMS Project in Symfony2
 What's inside?
 --------------
 
-The website comes pre-configured with the following bundles:
+This project comes pre-configured with the following bundles:
 
 * Bundles from Symfony Standard distribution
 * SonataAdminBundle - The missing Symfony2 Admin Generator
@@ -40,7 +40,7 @@ composer.phar install
 
 That will install all the external libraries.
 
-Configure the ``parameters.yml`` file before going creating the configs for other envs and going ahead with the database.
+Configure the ```parameters.yml``` file before going creating the configs for other envs and going ahead with the database.
 
 ```
 cp app/config/parameters.yml.dist app/config/parameters.yml

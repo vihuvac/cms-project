@@ -7,11 +7,12 @@ use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\DataFixtures\AbstractFixture;
 use Doctrine\Common\Persistence\ObjectManager;
 
+use Symfony\Component\DependencyInjection\ContainerAwareInterface;
+use Symfony\Component\DependencyInjection\ContainerInterface;
+
 use Sonata\PageBundle\Model\SiteInterface;
 use Sonata\PageBundle\Model\PageInterface;
 
-use Symfony\Component\DependencyInjection\ContainerAwareInterface;
-use Symfony\Component\DependencyInjection\ContainerInterface;
 
 class LoadPageData extends AbstractFixture implements ContainerAwareInterface, OrderedFixtureInterface
 {
@@ -105,7 +106,7 @@ class LoadPageData extends AbstractFixture implements ContainerAwareInterface, O
         $gallery->setSetting('galleryId', $this->getReference('media-gallery')->getId());
         $gallery->setSetting('title', $this->getReference('media-gallery')->getName());
         $gallery->setSetting('context', 'default');
-        $gallery->setSetting('format', 'high');
+        $gallery->setSetting('format', 'hd');
         $gallery->setPosition(2);
         $gallery->setEnabled(true);
         $gallery->setPage($homepage);

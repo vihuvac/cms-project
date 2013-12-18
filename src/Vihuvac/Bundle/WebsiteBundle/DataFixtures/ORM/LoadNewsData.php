@@ -7,10 +7,10 @@ use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\DataFixtures\AbstractFixture;
 use Doctrine\Common\Persistence\ObjectManager;
 
-use Sonata\NewsBundle\Model\CommentInterface;
-
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+
+use Sonata\NewsBundle\Model\CommentInterface;
 
 class LoadNewsData extends AbstractFixture implements ContainerAwareInterface, OrderedFixtureInterface
 {
@@ -33,10 +33,12 @@ class LoadNewsData extends AbstractFixture implements ContainerAwareInterface, O
         $faker = $this->getFaker();
 
         $tags = array(
-            'Symfony' => null,
             'Form'    => null,
             'Gallery' => null,
-            'General' => null
+            'General' => null,
+            'Symfony' => null,
+            'Video'   => null,
+            'Youtuve' => null
         );
 
         foreach($tags as $tagName => $null) {
@@ -71,7 +73,7 @@ Now a specific gist from github
 
 Load a media from a <code>SonataMediaBundle</code> with a specific format
 
-<% media $id, 'high' %>
+<% media $id, 'hdtv' %>
 
 RAW
 ;

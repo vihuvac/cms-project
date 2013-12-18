@@ -5,15 +5,14 @@ namespace Vihuvac\Bundle\WebsiteBundle\DataFixtures\ORM;
 use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\DataFixtures\AbstractFixture;
-
-use Sonata\MediaBundle\Model\GalleryInterface;
-use Sonata\MediaBundle\Model\MediaInterface;
-
 use Doctrine\Common\Persistence\ObjectManager;
 
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\Finder\Finder;
+
+use Sonata\MediaBundle\Model\GalleryInterface;
+use Sonata\MediaBundle\Model\MediaInterface;
 
 class LoadMediaData extends AbstractFixture implements ContainerAwareInterface, OrderedFixtureInterface
 {

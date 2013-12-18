@@ -13,17 +13,26 @@ sonata_media:
                 - sonata.media.provider.vimeo
 
             formats:
-                small:    { width: 100,  quality: 100 }
-                standard: { width: 480,  quality: 100 }
-                high:     { width: 1920, quality: 100 }
+                small:  { width: 100,  quality: 100  }
+                sdtv:   { width: 480,  quality: 360  }
+                edtv:   { width: 720,  quality: 480  }
+                hdtv:   { width: 1280, quality: 720  }
+                hd:     { width: 1920, quality: 1080 }
 
         news:
             providers:
+                - sonata.media.provider.dailymotion
+                - sonata.media.provider.youtube
                 - sonata.media.provider.image
+                - sonata.media.provider.file
+                - sonata.media.provider.vimeo
 
             formats:
-                abtract: { width: 480,  quality: 100 }
-                wide:    { width: 1920, quality: 100 }
+                small:  { width: 100,  quality: 100  }
+                sdtv:   { width: 480,  quality: 360  }
+                edtv:   { width: 720,  quality: 480  }
+                hdtv:   { width: 1280, quality: 720  }
+                hd:     { width: 1920, quality: 1080 }
 
     cdn:
         # define the public base url for the uploaded media

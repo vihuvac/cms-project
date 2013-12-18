@@ -51,14 +51,10 @@ Then edit the ```app/config/parameters.yml``` file.
 
 ## Database initialization
 
-At this point, the ```app/console``` command should start with no issues.
-
-Then runs the commands:
+At this point, the ```app/console``` command should work with no issues. We should use **doctrine migrations** everytime we want to **update** or **upgrade** our database, it is much better due to we can prevent several errors. In this case the migration is already configured so we do not need to run a ```diff``` command, so just run:
 
 ```
-php app/console doctrine:database:create
-php app/console doctrine:schema:update --dump-sql
-php app/console doctrine:schema:update --force
+php app/console doctrine:migrations:migrate
 ```
 
 ## Assets Installation
